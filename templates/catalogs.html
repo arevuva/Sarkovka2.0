@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+<!------------------------------------------------------HERO------------------------------------------------------------------>
+{% block con %}
+        <div class="page">
+          <div class="preview_image imbc">
+            <img src="../static/goods/{{goods[0][1]}}.jpg" alt="cover">
+            <div class="grad"></div>
+          </div>
+            <div class="container">
+              <div class="header-block_article">
+                <h2 class="hb_m">{{goods[0][3]}}</h2>
+                <div class="header-block_sub-title" style="text-align: center; padding-bottom: 30px;"> Выберите несколько товаров и оставьте заявку на звонок специалиста для получения консультации и уточнения деталий заказа</div>
+              </div>
+              <div class="gal-block">
+              <div class="gallery-list">
+                  {% for item in goods %}
+                    <div class="gallery-item" id="{{item[0]}}" title="{{item[1]}}">
+                    <div class="cost">{{item[2]}} &#x20bd;</div>
+                    <div  class="pic_gallery"><a href="../static/goods/{{item[1]}}.jpg" class="imgref"><img src="../static/goods/{{item[1]}}.jpg" alt="{{item[1]}}"></a>
+                    <div class="add_item" id="{{item[1]}}">Добавить</div></div>
+                    </div>
+                    
+                  {% endfor %}
+                  </div>
+                </div>
+                <div class="header-block_sub-title" style="text-align: center; padding-bottom: 30px;">Скидка при заказе от {{goods[0][4]}} единиц товара/метров составляет {{goods[0][5]}}%, подробности после консультации с мастером</div>
+            </div>
+        </div>
+
+{% endblock %}
+{% block form %}{% include 'layouts/form.html' %}{% endblock %}

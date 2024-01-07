@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static',filename='admin.css')}}">
+  <title>Режим администратора</title>
+</head>
+<body>
+  <div class="form-container">
+    <form method="post" id="form">
+        <h2>Регистрация</h2>
+      <div class="alert">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+         {% for message in messages %}
+            {{ message }}<br>
+         {% endfor %}
+      {% endif %}
+   {% endwith %}
+  </div>
+      <div class="form-group">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login">
+      </div>
+      <div class="form-group">
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password">
+        <label for="password1">Повторите пароль:</label>
+        <input type="password" id="password1" name="password1">
+      </div>
+      <button type="submit">Зарегестрировать</button>
+    </form>
+  </div>
+</body>
+</html>

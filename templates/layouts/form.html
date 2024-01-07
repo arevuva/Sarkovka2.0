@@ -1,0 +1,24 @@
+
+<div class="footer_form">
+    <form action='/addappointment' method="post" id="form" class="form_body">
+      <span class="form_title">Оставьте заявку</span>
+      <div>
+      <div class="form_item">
+        <label for="tel" class="form_label">Номер телефона</label>
+        <input type="tel" name="tel" id="tel" pattern="+[78]+[0-9]{10}" autofocus required title="Неверный формат ввода" class="form_input _req _tel" minlength="11">
+      </div>
+      <div class="form_item">
+        <label for="curitem" class="form_label">Выбранные товары</label>
+        <input type="text" id="curitem" name="curitem" class="form_input _curitem" readonly>
+      </div>
+    </div>
+    <div>
+      <div class="form_item">
+        <label for="message" class="form_label">Комментарий к заявке:</label>
+        <textarea name="message" id="message" class="form_input"></textarea>
+      </div>
+      <button type="submit" name="" class="form_button">Отправить</button>
+    </div>
+    </form>
+  </div>
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Моя страница</title>
+ <style type="text/css">
+    body{
+        background-color: rgb(49, 49, 49);
+        color: aliceblue;
+    }
+    .wrap{
+      display: flex;
+      width: 100%;
+      margin-right: 0px;
+    }
+    a, u {
+  text-decoration: none;
+}
+  .container {
+   margin-left: 0px;
+   width: 70vw;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content:start;
+   align-items:start;
+   margin: 20px;
+   position: relative;
+  }
+
+  .cell {
+   flex-basis: 300px;
+  width: 300px;
+  height: 400px;
+  border: 2px solid rgb(237, 237, 237);
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y:scroll;
+  position: relative;
+  border-radius: 20px 0px 0px 20px;
+  }
+
+  img {
+   max-width: 40%;
+   max-height: 50%;
+   object-fit: contain;
+   margin-bottom: 10px;
+  }
+
+  form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 20px;
+  }
+
+  select {
+   margin-bottom: 10px;
+  }
+  .econtainer{
+   position: relative;
+   margin: 20px;
+   height: 90vh;
+   border: 2px solid rgb(237, 237, 237);
+   overflow-y: scroll;
+   margin: 0px 0px 0px 0px;
+   padding-bottom: 20px;
+   border-radius: 20px 0px 0px 20px;
+  }
+  .ecell{
+   width:100%;
+  border: 2px solid rgb(237, 237, 237);
+  margin-bottom: 3px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 20px 0px 0px 20px;
+  }
+  .ww{
+   word-wrap: break-word;
+   width: 100%;
+   font-size: 15px;
+  }
+  .btn{
+   background-color: bisque;
+   padding: 10px;
+  }
+  .null{
+   width: 0px;
+   background-color: rgb(49, 49, 49);
+   height: 0px;
+   margin-bottom: 15px;
+  }
+  .skill{
+   line-height: 100%;
+  }
+  .back{
+   padding: 10px 20px;
+   margin: 10px;
+   border-radius: 10px;
+   background-color: bisque;
+   color: black;
+  }
+ </style>
+</head>
+<body>
+   <a href="/logout" class="back">Выйти из режима администратора</a>
+   <a href="/registration" class="back">Зарегестрировать администратора</a>
+<div class="wrap">
+   {% with messages = get_flashed_messages() %}
+      {% if messages %}
+         {% for message in messages %}
+            {{ message }}<br>
+         {% endfor %}
+      {% endif %}
+   {% endwith %}
+
+   
+ <div class="container">
+
+   {% for a in apps%}
+  <div class="cell">
+      <h2>Заявка №{{a[0]}}</h2>
+      <div class="ww">Дата: {{a[3]}}</div>
+      <div class="ww">Время: {{a[4]}}</div>
+      <div class="ww">Сообщение: "{{a[1]}}"</div>
+      <p>Телефон клиента: {{a[2]}}</p>
+      <div class="imgblock">
+      {% for img in getImgs(a[0])%}
+         <img src="../static/goods/{{img[0]}}.jpg" alt="{{img[0]}}">
+      {% endfor %}
+      </div>
+      <form method="post" id="form">
+         <input type="text" name="appid" value="{{a[0]}}" class="null">
+         <label for="select">Выберите работника:</label>
+         <select name="select">
+         {% for e in employees %}
+         <option value="{{e[0]}}">{{e[1]}}</option>
+         {% endfor %}
+         </select>
+         <button type="submit" class="btn">Утвердить</button>
+      </form>
+  </div>
+{% endfor %}
+ </div>
+ <div class="econtainer">
+   {% for e in employees %}
+   <div class="ecell">
+         <div class="ww"><b>{{e[1]}}</b></div>
+         <div class="ww">Номер телефона: {{e[2]}}</div>
+         <div class="ww">Опыт работы: {{e[3]}}</div>
+         <div class="ww">Имеется опыт работы с:
+            {% for skill in getSkills(e[0])%}
+            <p class="skill">- {{skill[0]}}</p>
+            {% endfor %}
+         </div>
+   </div>
+   {% endfor %}
+
+ </div>
+</div>
+</body>
+</html>

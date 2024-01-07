@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="ковка, холодная ковка, оградки, забор, ворота, кованое крыльцо, металлоконструкции">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='icons.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='test.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <title>{{title}}</title>
+</head>
+{% include 'layouts/header+gotop.html'%}
+{% block con %}{%endblock%}
+<footer class="footer">
+    <div class="footer_container container">
+      <div class="footer_block">
+        {% block form %}
+        {% endblock %}
+        <div class="footer_always">
+          <a href="kovka.html" class="footer_logo" title="На главную">SARkovka</a>
+          <div class="footer_contacts">
+            <a href="tel:+79109061976"><span class="icon-phone"> +7 910 906 19 76</span></a><br>
+            <div class="socbar">
+              <a href="https://t.me/AlexAniskin" class="link"><span class="icon-telegram"></span></a>
+              <a href="https://vk.com/public220605646" class="link"><span class="icon-vk"></span></a>
+              <a href="https://api.whatsapp.com/send/?phone=89109061976" class="link"><span class="icon-whatsapp"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer_map">
+          <div class="map_title">Карта сайта</div>
+          <ul class="map_list">
+              <li class="map_item"><a href="kovka.html" class="map_link m" title="Главная">Главная</a></li>
+              <ul class="map_list king">
+                <li>
+                  <ul>
+                  <li class="map_item">
+                    <a href="o_nas/kovka_onas.html" class="map_link n" title="О нас">О нас</a>
+                  </li>
+  
+                  <li class="map_item">
+                    <a href="vorota/vorota.html" class="map_link n" title="Ворота">Ворота</a>
+                  </li>
+  
+                  <li class="map_item">
+                    <a href="lestnici/perila.html" class="map_link n" title="Лестницы">Лестницы</a>
+                  </li>
+                </ul>
+                </li>
+                  <li class="map_item">
+                    <a href="interier/interier.html" class="map_link n map_item" title="Интерьер">Интерьер</a>
+                  <ul class="map_sublist">
+                    <li class="map_item">
+                      <a href="interier/krovati/krovati.html" class="map_link" title="Кровати">-Кровати</a>
+                    </li>
+                    <li class="map_item">
+                      <a href="interier/stoli_i_stulya/stoli_i_stulya.html" class="map_link" title="Столы и стулья">-Столы и стулья</a>
+                    </li>
+                  </ul>
+                </li>
+  
+                  <li class="map_item"><a href="../exterier/exterier.html" class="map_link n map_item" title="Экстерьер">Экстерьер</a>
+                  <ul class="map_sublist">
+                    <li class="map_item">
+                      <a href="exterier/lavki_i_kacheli/lavki_i_kacheli.html" class="map_link" title="Лавки и качели">-Лавки и качели</a>
+                    </li>
+                    <li class="map_item">
+                      <a href="exterier/mangaly/mangaly.html" class="map_link" title="Мангалы">-Мангалы</a>
+                    </li>
+                  </ul>
+                </li>
+  
+                <li class="map_item">
+                  <li class="map_item"><a href="articles-list/articleslist.html" class="map_link n map_item" title="Интересные статьи">Интересные статьи</a>
+                  <ul class="map_sublist">
+                    <li class="map_item">
+                      <a href="articles-list/zharaiholod/zhariholod.html" class="map_link" title="Жар и холод">-"Жар и холод"</a>
+                    </li>
+                    <li class="map_item">
+                      <a href="articles-list/kachestvo/kachestvo.html" class="map_link" title="Качественная ковка">-"Качественная ковка"</a>
+                    </li>
+                  </ul>
+                </li>
+                </li>
+              </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+      </div>
+  
+   <script src="{{url_for('static', filename='kovka.js')}}"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+  </body>
+  </html>

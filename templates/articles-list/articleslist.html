@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+<!------------------------------------------------------HERO------------------------------------------------------------------>
+{% block con %}
+<div class="page">
+
+          <div class="container">
+            <div class="header-block_article">
+              <h2 class="header-block_title">Интересные статьи</h2>
+              <div class="header-block_sub-title">Мы подготовили для вас сразу несколько
+                интересных статей, почитав которые,
+                вы сможете проникнуться искусством ковки и понять как всё устроено изнутри.</div>
+            </div>
+            <div class="articles-list">
+              <a href="{{url_for('zharaiholod')}}" class="articles-list_item">
+                <div class="articles-list_overlay">
+                  Читать
+                </div>
+                <div class="articles-list_item_icon">
+                  <img src="../static/pic/holod.jpg" alt="cover">
+                </div>
+                <div class="articles-list_item_text">
+                  <div class="item_title">Жар и холод</div>
+                  <div class="item_about">Статья поможет вам определиться c выбором между горячей и холодной ковкой</div>
+                </div>
+              </a>
+              <a href="{{url_for('kachestvo')}}" class="articles-list_item">
+                <div class="articles-list_overlay">
+                  Читать
+                </div>
+                <div class="articles-list_item_icon">
+                  <img src="../static/pic/ковка.jpg" alt="cover">
+                </div>
+                <div class="articles-list_item_text">
+                  <div class="item_title">Качественная ковка</div>
+                  <div class="item_about">Прочитав, вы поймете, какие изделия прослужат вам верой и правдой много лет</div>
+                </div>
+              </a>
+              <a href="" class="articles-list_item">
+                <div class="articles-list_overlay">
+                  Скоро...
+                </div>
+                <div class="articles-list_item_icon">
+                  <img src="../static/pic/reshenie.jpg" alt="cover">
+                </div>
+                <div class="articles-list_item_text">
+                  <div class="item_title">Своё решение</div>
+                  <div class="item_about">Статья поможет вам поставить себе правильные вопросы и понять свои желания</div>
+                </div>
+              </a>
+            </div>
+          </div>
+      </div>
+{% endblock %}

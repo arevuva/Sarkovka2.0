@@ -1,0 +1,72 @@
+
+<body>
+  <!-------------------------------------------------HEADER----------------------------------------------------------------------->
+    <div class="wrapper">
+      <header class="header">
+        <div class="header_container container">
+          <a href="{{url_for('index')}}" class="header_logo logo" title="На главную">
+            SARkovka
+          </a>
+          <div class="menu_burger">
+            <span></span>
+          </div>
+          <nav class="header_menu menu">
+            <ul class="menu_list">
+              <li class="menu_item">
+                <a href="{{url_for('onas')}}" class="menu_link" title="Информация о нашей компании">О нас</a>
+              </li>
+              <li class="menu_item cont">
+                <div class="menu_link" id="kat">Каталог работ&blacktriangledown;
+                  <ul class="slide-list">
+                    <li class="menu_item">
+                      <a href="{{url_for('type', type='vorota')}}" class="menu_link" title="Смотреть ворота">Ворота</a>
+                    </li>
+                    <li class="menu_item">
+                      <a href="{{url_for('type', type='perila')}}" class="menu_link" title="Смотреть ворота">Лестницы</a>
+                    </li>
+                    <li class="menu_item cont2">
+                      <a href="{{url_for('exterier')}}" class="menu_link" title="Перейти в каталог">Экстерьер&blacktriangledown;</a>
+                      <ul class="slide-list2">
+                        <li class="menu_item">
+                          <a href="{{url_for('type', type='mangali')}}" class="menu_link" title="Смотреть Мангалы">Мангалы</a>
+                        </li>
+                        <li class="menu_item">
+                          <a href="{{url_for('type', type='lavki')}}" class="menu_link" title="Смотреть Лавки и качели">Лавки и качели</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu_item cont2">
+                      <a href="{{url_for('interier')}}" class="menu_link" title="Перейти каталог">Интерьер &blacktriangledown;</a>
+                      <ul class="slide-list2">
+                        <li class="menu_item">
+                          <a href="{{url_for('type', type='krovati')}}" class="menu_link" title="Смотреть кровати">Кровати</a>
+                        </li>
+                        <li class="menu_item">
+                          <a href="{{url_for('type',type='stoli_i_stulya')}}" class="menu_link" title="Смотреть Столы и стулья">Столы и стулья</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu_item cont">
+                <div class="menu_link"><a href="{{url_for('articles')}}" title="Смотреть список статей">Интересные статьи &blacktriangledown;</a>
+                  <ul class="slide-list art">
+                    <li class="menu_item">
+                      <a href="{{url_for('article', article='zhariholod')}}" class="menu_link" title="Читать статью">"Жар и холод"</a>
+                    </li>
+                    <li class="menu_item">
+                      <a href="{{url_for('article', article='kachestvo')}}" class="menu_link" title="Читать статью">"Качественная ковка"</a>
+                    </li>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="go-top">▲</div>
+      <div class="open-call">
+        <div class="call"><span class="icon-phone"></span></div>
+        <a href="tel:+79109061976" class="call sub-call"><span class="icon-phone"></span></a>
+        <a href="https://t.me/AlexAniskin" class="call sub-call tg"><span class="icon-telegram"></span></a>
+        <a href="https://api.whatsapp.com/send/?phone=89109061976" class="call sub-call whatsapp"><span class="icon-whatsapp"></span></a>
+      </div>
